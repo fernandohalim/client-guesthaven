@@ -6,16 +6,21 @@ import android.os.Bundle
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var btn_add : Button
+    private lateinit var btn_get : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val exploreButton: Button = findViewById(R.id.exploreButton)
+        btn_add = findViewById(R.id.btn_add)
+        btn_get = findViewById(R.id.btn_get)
 
-//        exploreButton.setOnClickListener {
-//            // Handle button click, for example, navigate to another activity
-//            val intent = Intent(this, ExploreActivity::class.java)
-//            startActivity(intent)
-//        }
+        btn_add.setOnClickListener{
+            startActivity(Intent(this,NewDataActivity::class.java))
+        }
+
+        btn_get.setOnClickListener{
+            startActivity(Intent(this,DataActivity::class.java))
+        }
     }
 }
