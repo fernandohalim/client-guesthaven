@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "786226469991",
+    "project_id": "guesthaven-2dfc8",
+    "storage_bucket": "guesthaven-2dfc8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:786226469991:android:3be45e9fa637d6882ac8c2",
+        "android_client_info": {
+          "package_name": "com.example.guesthaven"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGF-NFdBcHSMtryF1OGxsKER7GLGVOKc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
