@@ -52,9 +52,29 @@
         android:layout_marginStart="120dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="121dp"
-        android:text="Pesan GuestHouse"
+        android:text="Lihat Pesanan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_get" />
+
+    <Button
+        android:id="@+id/btn_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="60dp"
+        android:text="Contact"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ord" />
+
+    <Button
+        android:id="@+id/btn_contact_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="84dp"
+        android:text="Lihat Contact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ord" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

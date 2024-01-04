@@ -1,13 +1,11 @@
 package com.example.guesthaven
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.navigation.NavigationView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -17,7 +15,7 @@ import com.google.firebase.database.ValueEventListener
 class DataActivity : AppCompatActivity() {
     private lateinit var dbRef: DatabaseReference
     private lateinit var homeRecyclerView: RecyclerView
-    private lateinit var adapter: DataAdapter
+    private lateinit var adapter: DataAdapter // Update adapter initialization
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,14 +23,18 @@ class DataActivity : AppCompatActivity() {
 
         homeRecyclerView = findViewById(R.id.homeList)
         val homeArrayList = ArrayList<Database>() // Local variable for data list
-        adapter = DataAdapter(homeArrayList)
+        adapter = DataAdapter(homeArrayList) { selectedData ->
+            val intent = Intent(this@DataActivity, NewOrderActivity::class.java)
+            intent.putExtra("nama", selectedData.name)
+            intent.putExtra("lokasi", selectedData.location)
+            intent.putExtra("harga", selectedData.price)
+            startActivity(intent)
+        }
         homeRecyclerView.adapter = adapter
         homeRecyclerView.layoutManager = LinearLayoutManager(this)
 
         // Initialize DatabaseReference
         dbRef = FirebaseDatabase.getInstance().reference.child("catalog")
-        homeArrayList.add(Database("Sample Home", "Sample Location", "50000"))
-        adapter.notifyDataSetChanged()
         // Add ValueEventListener to read data from Firebase
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -41,7 +43,8 @@ class DataActivity : AppCompatActivity() {
                     val home = Database(
                         dataSnapshot.child("name").getValue(String::class.java) ?: "",
                         dataSnapshot.child("location").getValue(String::class.java) ?: "",
-                        dataSnapshot.child("price").getValue(String::class.java) ?: ""
+                        dataSnapshot.child("price").getValue(String::class.java) ?: "",
+                        dataSnapshot.child("imagePath").getValue(String::class.java) ?: ""
                     )
                     newList.add(home)
                 }

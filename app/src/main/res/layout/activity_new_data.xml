@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     android:id="@+id/drawerLayout">
 
-    <!-- Your existing content goes here -->
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,24 +13,21 @@
         app:cardCornerRadius="8dp"
         android:layout_margin="16dp">
 
-        <!-- Your existing content goes here -->
-
         <LinearLayout
             android:id="@+id/homeList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Your existing content goes here -->
-
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_default_image_foreground"/> <!-- Default image, replace with your desired default image -->
 
             <EditText
-                android:id="@+id/name"
+                android:id="@+id/etNama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -41,7 +36,7 @@
                 android:minHeight="48dp" />
 
             <EditText
-                android:id="@+id/price"
+                android:id="@+id/etHarga"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -50,7 +45,7 @@
                 android:minHeight="48dp" />
 
             <EditText
-                android:id="@+id/location"
+                android:id="@+id/etLokasi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -59,14 +54,13 @@
                 android:minHeight="48dp" />
 
             <Button
-                android:id="@+id/submit"
+                android:id="@+id/btnAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add Data" />
+                android:text="Tambah Data" />
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
-    <!-- NavigationView for the sidebar -->
 </androidx.drawerlayout.widget.DrawerLayout>

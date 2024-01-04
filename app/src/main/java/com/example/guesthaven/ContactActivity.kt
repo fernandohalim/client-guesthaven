@@ -14,38 +14,38 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class OrderActivity : AppCompatActivity() {
-    private lateinit var orderRecyclerView: RecyclerView
-    private lateinit var orderAdapter: DataOrderAdapter
+class ContactActivity : AppCompatActivity() {
+    private lateinit var contactRecyclerView: RecyclerView
+    private lateinit var contactAdapter: DataContactAdapter
     private lateinit var dbRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_order)
+        setContentView(R.layout.activity_contact)
 
-        orderRecyclerView = findViewById(R.id.orderList)
-        val ordedrArrayList = ArrayList<DatabaseOrder>()
-        orderAdapter = DataOrderAdapter(ordedrArrayList)
-        orderRecyclerView.adapter = orderAdapter
-        orderRecyclerView.layoutManager = LinearLayoutManager(this)
+        contactRecyclerView = findViewById(R.id.contactList)
+        val contactArrayList = ArrayList<DatabaseContact>()
+        contactAdapter = DataContactAdapter(contactArrayList)
+        contactRecyclerView.adapter = contactAdapter
+        contactRecyclerView.layoutManager = LinearLayoutManager(this)
 
-        dbRef = FirebaseDatabase.getInstance().reference.child("booking")
+        // Initialize DatabaseReference
+        dbRef = FirebaseDatabase.getInstance().reference.child("contact")
 
+        // Add ValueEventListener to read data from Firebase
         dbRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val newList = mutableListOf<DatabaseOrder>()
+                val newList = mutableListOf<DatabaseContact>()
                 for (dataSnapshot in snapshot.children) {
-                    val order = DatabaseOrder(
+                    val order = DatabaseContact(
                         dataSnapshot.child("name").getValue(String::class.java) ?: "",
-                        dataSnapshot.child("location").getValue(String::class.java) ?: "",
-                        dataSnapshot.child("order_name").getValue(String::class.java) ?: "",
                         dataSnapshot.child("number").getValue(String::class.java) ?: "",
-                        dataSnapshot.child("date").getValue(String::class.java) ?: "",
+                        dataSnapshot.child("description").getValue(String::class.java) ?: "",
                     )
                     newList.add(order)
                 }
-                ordedrArrayList.addAll(newList) // Add new data
-                orderAdapter.notifyDataSetChanged() // Notify adapter about the changes
+                contactArrayList.addAll(newList) // Add new data
+                contactAdapter.notifyDataSetChanged() // Notify adapter about the changes
             }
 
 
