@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         Toast.makeText(this, "Berhasil Masuk", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this,MainActivity::class.java))
+                        startActivity(Intent(this,AdminActivity::class.java))
                     } else {
                         Toast.makeText(this, "Otentikasi Gagal", Toast.LENGTH_SHORT).show()
                     }

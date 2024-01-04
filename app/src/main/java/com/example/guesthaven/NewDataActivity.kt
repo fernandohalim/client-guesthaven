@@ -99,7 +99,7 @@ class NewDataActivity : AppCompatActivity(), View.OnClickListener {
                                 "Data Berhasil Ditambahkan",
                                 Toast.LENGTH_LONG
                             ).show()
-                            startActivity(Intent(this, MainActivity::class.java))
+                            startActivity(Intent(this, AdminActivity::class.java))
                         } else {
                             Toast.makeText(
                                 applicationContext,

@@ -7,29 +7,30 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btn_get"
+        android:id="@+id/btn_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="130dp"
-        android:text="Guesthouse List"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="125dp"
+        android:text="Add Guest House"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="368dp"
-        android:layout_height="297dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="21dp"
+    <Button
+        android:id="@+id/btn_contact_show"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="130dp"
+        android:text="Lihat Pesan Contact Us"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_guesthaven" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_ord" />
 
     <Button
         android:id="@+id/btn_ord"
@@ -44,39 +45,41 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_get" />
 
     <Button
-        android:id="@+id/btn_contact"
-        android:layout_width="150dp"
+        android:id="@+id/btn_get"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="130dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="130dp"
-        android:text="Contact Us"
+        android:text="Guesthouse List"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_add" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="368dp"
+        android:layout_height="297dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="21dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_ord" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_guesthaven" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="146dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="147dp"
-        android:text="Admin? Login Here"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="163dp"
+        android:text="Administrator"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_contact" />
-
-    <Button
-        android:id="@+id/btn_login_adm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="141dp"
-        android:text="Login Admin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
